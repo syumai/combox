@@ -4,9 +4,9 @@
   "description": "Web worker sandbox implementation based on Comlink.",
   "author": "syumai",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "type": "module",
-  "types": "dist/index.d.ts",
+  "types": "dist/index.d.cts",
   "files": [
     "dist"
   ],
@@ -17,9 +17,9 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "types": "./dist/index.d.cts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "publishConfig": {
