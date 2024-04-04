@@ -1,7 +1,7 @@
 {
   "name": "@syumai/combox",
   "version": "0.1.0",
-  "description": "iframe sandbox implementation based on Comlink.",
+  "description": "Web worker sandbox implementation based on Comlink.",
   "author": "syumai",
   "license": "MIT",
   "main": "dist/index.js",
