@@ -1,5 +1,5 @@
 {
-  "name": "combox",
+  "name": "@syumai/combox",
   "version": "0.1.0",
   "description": "iframe sandbox implementation based on Comlink.",
   "author": "syumai",
