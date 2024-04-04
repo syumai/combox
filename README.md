@@ -10,6 +10,25 @@ _This is an experimental project!!_
 
 - https://syumai.github.io/combox/example/
 
+## Usage
+
+```js
+<script type="module">
+  import { Combox } from "https://unpkg.com/@syumai/combox/dist/index.js";
+  const combox = new Combox();
+  (async () => {
+    const code = `(() => {
+      const a = 1;
+      const b = 2;
+      return a + b;
+    })()
+    `;
+    // calculated in Web worker sandbox.
+    console.log(await combox.evaluate(code)); // 3
+  })();
+  ...
+```
+
 ## License
 
 MIT
