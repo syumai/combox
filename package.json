@@ -1,0 +1,42 @@
+{
+  "name": "combox",
+  "version": "0.1.0",
+  "description": "iframe sandbox implementation based on Comlink.",
+  "author": "syumai",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup ./src/index.ts --format esm,cjs --dts",
+    "publint": "publint",
+    "release": "npm run build && npm run publint && npm publish"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syumai/hono-middleware-go.git"
+  },
+  "peerDependencies": {
+    "comlink": ">=4.4.1"
+  },
+  "devDependencies": {
+    "comlink": "^4.4.1",
+    "publint": "^0.2.7",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  }
+}
