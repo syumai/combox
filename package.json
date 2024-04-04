@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup ./src/index.ts --format esm,cjs --dts",
+    "build": "tsup ./src/index.ts --format esm,cjs --dts --minify",
     "publint": "publint",
     "release": "npm run build && npm run publint && npm publish"
   },
@@ -29,9 +29,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/syumai/hono-middleware-go.git"
-  },
-  "peerDependencies": {
-    "comlink": ">=4.4.1"
   },
   "devDependencies": {
     "comlink": "^4.4.1",
