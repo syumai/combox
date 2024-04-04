@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Combox</title>
+    <style>
+      textarea {
+        width: 300px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Combox - Web worker sandbox based on Comlink</h1>
+    <h2>Form</h2>
+    <form id="evalForm" action="#">
+      <div>
+        <h3>Code</h3>
+        <textarea name="src">(() => {
+  const a = 1;
+  const b = 2;
+  return a + b;
+})()</textarea>
+      </div>
+      <button>Submit</button>
+    </form>
+    <h2>Result</h2>
+    <textarea id="evalResult"></textarea>
+    <script type="module">
+      import { Combox } from "./index.js";
+      const evalForm = document.getElementById("evalForm");
+      const evalResult = document.getElementById("evalResult");
+      const combox = new Combox();
+      evalForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const src = event.target.src.value;
+        try {
+          const result = await combox.evaluate(src);
+          console.debug({ result });
+          evalResult.value = JSON.stringify(result);
+        } catch(e) {
+          console.error(e);
+          evalResult.value = e;
+        }
+      })
+    </script>
+    <h2>Repo</h2>
+    <div>
+      <a href="https://github.com/syumai/combox">https://github.com/syumai/combox</a>
+    </div>
+  </body>
+</html>
