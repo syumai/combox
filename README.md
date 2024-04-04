@@ -17,3 +17,8 @@ MIT
 ## Author
 
 syumai
+
+## Related projects
+
+- https://github.com/syumai/sandboxed-eval
+- https://github.com/GoogleChromeLabs/comlink
